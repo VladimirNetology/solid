@@ -1,5 +1,5 @@
 package text;
 
-public interface textAppMsg {
+public interface TextAppMsg {
     void sendAppMsg(String appId, String text);
 }

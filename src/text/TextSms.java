@@ -1,5 +1,5 @@
 package text;
 
-public interface textSms {
+public interface TextSms {
     void sendSms(String number, String text);
 }

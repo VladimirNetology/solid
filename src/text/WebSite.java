@@ -1,6 +1,6 @@
 package text;
 
-public class WebSite implements textEmail, textSms {
+public class WebSite implements TextEmail, TextSms {
 
     @Override
     public void sendEmail(String email, String text) {

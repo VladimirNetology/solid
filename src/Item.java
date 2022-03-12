@@ -5,13 +5,14 @@ public class Item {
     private String company;
     private double raiting;
 
-    private static int idIndex;
+    private static int idIndex = 0;
 
     public Item(String name, int price, String company) {
         this.id = ++idIndex;
         this.name = name;
         this.price = price;
         this.company = company;
+        this.raiting = 3.0;
     }
 
     public String getName() {
@@ -47,6 +48,6 @@ public class Item {
     }
 
     public int getId() {
-        return idIndex;
+        return id;
     }
 }

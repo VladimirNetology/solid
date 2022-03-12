@@ -1,21 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
     private long id;
     private String name;
     private String password;
     private String address;
-    public CardStore cardStore;
-    private List<Delivery> deliveryList;
+    private String phone;
+    private StoreCart storeCart;
 
-    public User(long id, String name, String password, String address) {
+    public User(long id, String name, String password, String address, String phone) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.address = address;
-        this.cardStore = new CardStore("Корзина " + name);
-        deliveryList = new ArrayList<>();
+        this.storeCart = new StoreCart("Корзина " + name);
+        this.phone = phone;
+    }
+
+    public StoreCart getStoreCart() {
+        return storeCart;
     }
 
     public long getId() {
@@ -50,7 +51,7 @@ public class User {
         this.address = address;
     }
 
-//    public List<Delivery> getDeliveryList() {
-//        return deliveryList;
-//    }
+    public String getPhone() {
+        return phone;
+    }
 }

@@ -1,6 +1,6 @@
 package print;
 
-public class MsgLogger implements printMsg {
+public class MsgLogger implements PrintMsg {
     void printMsgToConsole(String text) {
         System.out.println(text);
     }

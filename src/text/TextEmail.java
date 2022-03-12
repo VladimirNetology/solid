@@ -1,5 +1,5 @@
 package text;
 
-public interface textEmail {
+public interface TextEmail {
     void sendEmail(String email, String text);
 }

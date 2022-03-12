@@ -1,8 +1,8 @@
 import print.MsgLogger;
-import print.printMsg;
+import print.PrintMsg;
 
 public class Main {
-    public static printMsg print = new MsgLogger();
+    public static PrintMsg print = new MsgLogger();
 
     public static void main(String[] args) {
         Store store = new Store("Магазин #1");
@@ -18,34 +18,36 @@ public class Main {
         store.listAllItems("Samsung");
         System.out.println();
 
-        User vasya = new User(1, "Vasya Petrov", "1234", "14 Lenina, kv 44");
-        vasya.cardStore.connectToStore(store);
-        vasya.cardStore.addItem(3, 1);
-        vasya.cardStore.addItem(4, 2);
-        vasya.cardStore.addItem(2, 1);
+        User vasya = new User(1, "Vasya Petrov", "1234", "14 Lenina, kv 44", "912111222");
+        vasya.getStoreCart().connectToStore(store);
+        vasya.getStoreCart().addItem(3, 1);
+        vasya.getStoreCart().addItem(4, 3);
+        vasya.getStoreCart().addItem(2, 1);
 
         System.out.println();
-        vasya.cardStore.listAllItems();
+        vasya.getStoreCart().listAllItems("");
 
-        
+        System.out.println();
+        vasya.getStoreCart().deleteItem(2, 1, true);
+        vasya.getStoreCart().deleteItem(4, 1, true);
 
+        System.out.println();
+        vasya.getStoreCart().listAllItems("");
 
-//        vasya.cardStore.deleteItem(2, 1);
-//        vasya.cardStore.deleteItem(4, 1);
-//
-//        System.out.println();
-//        vasya.cardStore.listAllItems();
+        PostMail poshta = new PostMail("Почта");
+        poshta.startDelivery(vasya, vasya.getStoreCart(), store);
+        System.out.println();
+        poshta.listOfDelivery();
 
-//        System.out.println();
-//        vasyaCart.order();
-//
-//        System.out.println();
-//        vasyaCart.addRaitingToItem(3, 4.0);
-//        vasyaCart.addRaitingToItem(4, 2.5);
-//
-//        System.out.println();
-//        store.listAllItems("");
+        System.out.println();
+        store.changeRaiting(3, 4.8);
+        store.changeRaiting(4, 2.5);
 
+        System.out.println();
+        store.listAllItems("");
+
+        System.out.println();
+        poshta.sendNotifyWithWeb(vasya);
 
     }
 }

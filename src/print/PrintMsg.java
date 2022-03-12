@@ -1,5 +1,5 @@
 package print;
 
-public interface printMsg {
+public interface PrintMsg {
     void print(String text);
 }

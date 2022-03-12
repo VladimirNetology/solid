@@ -1,6 +1,6 @@
 package text;
 
-public class MobileApp implements textAppMsg, textSms {
+public class MobileApp implements TextAppMsg, TextSms {
     @Override
     public void sendAppMsg(String appId, String text) {
         System.out.println("[App]: #" + appId + " - " + text);
